@@ -9,6 +9,7 @@ metrics = ['accuracy', 'f1', 'precision', 'recall']
 num_seeds = 5
 num_bootstraps = 10000
 save_name = './bootsrap_scores.pickle'
+#prediction_matrix is N x num_seed+1 matrix, where N is size of test set; first column is true labels; remaining columns are predictions with different seeds. 
 
 def get_CI(distribution, metric):        
     bootstrap_distribution = np.mean(distribution[metric], axis=1)
